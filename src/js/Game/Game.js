@@ -25,7 +25,7 @@ function generateCards(count) {
     return shuffleArray(cards);
 }
 
-export default function Game({ fieldWidth = 2, fieldHeight = 2 }) {
+export default function Game({ fieldWidth = 6, fieldHeight = 3 }) {
     const totalCards = fieldWidth * fieldHeight;
 
     const [cards, setCards] = useState(generateCards(totalCards));
