@@ -1,5 +1,17 @@
+@font-face {
+  font-family: 'allitta_calligraphyregular';
+  src: url('../allitta_calligraphy-webfont.woff2') format('woff2'),
+  url('../allitta_calligraphy-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.explanation {
+  text-align: center;
+}
+
 .game {
-	height: 100vh;
+	height: 80vh;
 	width: 100vw;
 	display: flex;
 	align-items: center;
@@ -10,7 +22,7 @@
 .game .cards-container {
 	width: calc(100vw - ($spacer * 12));
 	height: calc(100vh - ($spacer * 12));
-	margin: $spacer * 6;
+	margin: $spacer;
 	display: grid;
 	grid-template-columns: repeat(6, auto);
 	grid-template-rows: repeat(3, 1fr);
@@ -36,4 +48,75 @@
 		margin: $spacer;
 		grid-gap: $spacer / 2;
 	}
+}
+
+.link {
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+.finished-container {
+  .explanation {
+    h1,h2,h3 {
+      font-family: allitta_calligraphyregular, serif;
+      margin-top: 50px;
+    }
+    margin-bottom: 50px;
+  }
+  .row {
+    &:first {
+      margin-top: 50px;
+    }
+    display: flex;
+    justify-content: center;
+    max-width: 450px;
+    margin: 0 auto;
+
+    ul {
+      padding: 0;
+      list-style: none;
+      margin: 0;
+      li {
+        margin-bottom: 20px;
+      }
+    }
+
+    .left {
+      width: 34%;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding-top: 20px;
+    }
+    .right {
+      width: 50%;
+      border-left: 1px solid darkgrey;
+      padding-left: 20px;
+      padding-top: 20px;
+      letter-spacing: 1.2px;
+    }
+  }
+}
+
+.image-container {
+  display:flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  img{
+    max-width: 31vw;
+    border-radius: 5px;
+    height: 31vh;
+    min-width: 190px;
+    @include media-breakpoint-down(md) {
+      max-width: 100vw;
+      width: 100vw;
+      height: inherit;
+      display: block;
+      margin:10px auto;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    display: block;
+    padding: 0;
+  }
+  padding: 0 5%;
 }
